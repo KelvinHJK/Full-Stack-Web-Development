@@ -40,16 +40,6 @@ router.post("/", async (req, res) => {
     });
   }
 
-  // author.save().then((err, newAuthor) => {
-  // if (err) {
-  //     res.render("authors/new", {
-  //     author: author,
-  //     errorMessage: "Error Creating Author...",
-  //     });
-  // } else {
-  //     res.render("authors");
-  // }
-  // });
 });
 
 module.exports = router;
