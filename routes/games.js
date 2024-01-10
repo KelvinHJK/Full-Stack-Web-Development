@@ -17,7 +17,26 @@ const upload = multer({
 
 // All Games Route
 router.get("/", async (req, res) => {
-  res.send("All Games");
+  let query = Game.find();
+  if (req.query.title != null && req.query.title != "") {
+    query = query.regex("title", new RegExp(req.query.title, "i"));
+  }
+  if (req.query.releasedBefore != null && req.query.releasedBefore != "") {
+    query = query.lte("releaseDate", req.query.releasedBefore);
+  }
+  if (req.query.releasedAfter != null && req.query.releasedAfter != "") {
+    query = query.gte("releaseDate", req.query.releasedAfter);
+  }
+
+  try {
+    const games = await query.find({});
+    res.render("games/index", {
+      games: games,
+      searchOptions: req.query,
+    });
+  } catch {
+    res.redirect("/");
+  }
 });
 
 // New Game Route

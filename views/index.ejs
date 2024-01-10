@@ -1,1 +1,7 @@
-Middle
+<h2>Recently added</h2>
+
+<div>
+    <% games.forEach(game => { %>
+        <img height="150" width="100" src="<%= game.imagePath %>">
+    <% }); %>
+</div>
