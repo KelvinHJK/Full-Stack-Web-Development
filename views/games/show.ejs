@@ -17,7 +17,7 @@
     Description: <%= game.description %>
 </div>
 
-<a href="/games/<%= game.id %>/edit">Edit</a>
+<a class="btn btn-primary" href="/games/<%= game.id %>/edit">Edit</a>
 
 <%- include('../partials/deleteForm', { url: '/games/' + game.id }) %>
 
