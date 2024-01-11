@@ -1,0 +1,13 @@
+<h2><%= author.name %></h2>
+
+<a href="/authors/<%= author.id %>/edit">Edit</a>
+<%- include('../partials/deleteForm.ejs', { url: '/authors/' + author.id }) %>
+
+<% if (gamesbyAuthor.length > 0) { %>
+    <h3>Games</h3>
+    <% gamesbyAuthor.forEach(game => { %>
+        <img height="150" width="100" src="<%= game.imagePath %>">
+    <% }); %>
+<% } else { %>
+    <div>No games found</div>
+<% } %>
