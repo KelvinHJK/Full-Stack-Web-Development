@@ -1,10 +1,16 @@
-// FilePond.registerPlugin(
-//   FilePondPluginImagePreview,
-//   FilePondPluginImageResize,
-//   FilePondPluginFileEncode
-// );
+FilePond.registerPlugin(
+  FilePondPluginImagePreview,
+  FilePondPluginImageResize,
+  FilePondPluginFileEncode
+);
 
-// FilePond.parse(document.body);
+FilePond.setOptions({
+  stylePanelAspectRatio: 100 / 150,
+  imageResizeTargetWidth: 150,
+  imageResizeTargetHeight: 100,
+});
+
+FilePond.parse(document.body);
 
 // FilePond.registerPlugin(FilePondPluginImagePreview);
 // FilePond.registerPlugin(FilePondPluginImageResize);
