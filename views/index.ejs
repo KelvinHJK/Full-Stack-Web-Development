@@ -2,6 +2,8 @@
 
 <div>
     <% games.forEach(game => { %>
-        <img height="150" width="100" src="<%= game.imagePath %>">
+        <a href="/games/<%= game.id %>">
+            <img height="100" width="150" src="<%= game.imagePath %>">
+        </a>
     <% }); %>
 </div>
